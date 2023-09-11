@@ -1,0 +1,56 @@
+.about-member {
+  display: flex;
+  align-items: center;
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.about-member .member-img img {
+  height: 300px;
+  border-radius: 15px;
+}
+
+.about-member .member-info {
+  width: 600px;
+  margin-left: 30px;
+}
+
+.about-parthiv {
+  text-align: center;
+  background: url("https://img.freepik.com/free-photo/beautiful-milky-way-night-sky_53876-139825.jpg?w=2000&t=st=1668369735~exp=1668370335~hmac=94d7e5250c516739da2a1b0b33ce806531e36a2e806442f6cb0ac004972da914")
+    no-repeat center fixed;
+  background-size: auto;
+  background-position: center;
+  color: rgb(252, 251, 251);
+  font-family: georgia;
+  height: 96vh;
+  padding-top: 10px;
+}
+.first {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 250px;
+  padding: 10px;
+  font-size: 22px;
+  background-color: rgb(17, 16, 16);
+  opacity: 0.9;
+  border-color: #b6afaf;
+  border-style: solid;
+  border-width: 10px;
+  border-radius: 20px;
+  padding-top: 20px;
+}
+
+.aboutus_container {
+  padding-top: 28px;
+}
+
+.aboutus_container h2 {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 35px;
+  font-weight: 800;
+  /* font-family: 'Courier New', Courier, monospace; */
+  color: aliceblue;
+  margin-bottom: 0px;
+}

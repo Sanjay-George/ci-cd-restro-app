@@ -1,0 +1,53 @@
+.TableContainer{
+    display: flex;
+    flex-direction: row;
+    padding-top: 100px;
+}
+
+.TableContainerLeft {
+width: 30%;
+}
+
+.TableContainerRight {
+width: 70%;
+padding-right: 80px;
+}
+
+.tblApprovals{
+    border-radius: 2px solid black;
+}
+
+.tblApprovals .ant-table-thead .ant-table-cell
+{
+    background-color: #dbd5d5;
+    border: 1px solid darkgray;
+}
+
+.tblApprovals .ant-table-tbody .ant-table-cell
+{
+    background-color: #fdfdfd;
+    border: 1px solid darkgray;
+}
+
+.DashboardMenu
+{
+    width: 256px;
+}
+
+@media (max-width: 962px)
+{
+    .TableContainer{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .TableContainerLeft {
+    width: 30%;
+    padding-bottom: 15px;
+    }
+    
+    .TableContainerRight {
+    width: 70%;
+    padding-right: 0px;
+    }
+}

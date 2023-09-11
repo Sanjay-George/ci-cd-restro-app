@@ -1,0 +1,161 @@
+@font-face {
+  font-family: OpenSans-Medium;
+  src: url(../../Fonts/OpenSans/OpenSans-Medium.ttf);
+}
+
+.main-class {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 6em;
+}
+
+.main-class {
+  padding-top: 5%;
+}
+
+.main h3,
+h4 {
+  font-family: OpenSans-Medium;
+}
+
+.res-detail {
+  padding-bottom: 50px;
+  padding-left: 30px;
+}
+
+.res-detail img {
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.res-detail h2 {
+  margin-left: 10px;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: 40px;
+}
+.res-detail div.res-detail-child {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400 !important;
+}
+
+.res-detail div.res-detail-child div {
+  padding-left: 10px;
+}
+
+.res-detail svg {
+  margin-left: 10px;
+}
+
+.extra {
+  text-align: left;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+.extra textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+.extra h4 {
+  text-align: left;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.main-class button {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+.reservedetail {
+  display: flex;
+  flex-direction: column;
+}
+
+.ReservationDetailsContainer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  justify-content: center;
+}
+
+.ReservationDetailsContainerLeft {
+  width: 30%;
+  padding-right: 10px;
+}
+
+.ReservationDetailsContainerRight {
+  width: 30%;
+  padding-left: 10px;
+}
+
+.ReservationDetailsInput {
+  margin-bottom: 20px;
+}
+
+.EditFields {
+  color: var(--btn-theme-color);
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 5px;
+  padding-left: 12px;
+}
+
+.show-other-info {
+  text-align: left;
+}
+
+.show-other-info .back-to-res {
+  border: 1px solid #c6c6c6;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.reserve-actions {
+  display: flex;
+}
+
+.special-request {
+  margin-top: 15px;
+}
+
+.booked-by {
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
+.special-request div {
+  border: 1px solid #c6c6c6;
+  width: 400px;
+  height: 100px;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-top: 10px;
+}

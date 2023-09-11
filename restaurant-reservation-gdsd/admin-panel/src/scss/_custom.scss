@@ -1,0 +1,21 @@
+// Here you can add other styles
+.auth-wrap {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.view-res-wrapper {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.ver-card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

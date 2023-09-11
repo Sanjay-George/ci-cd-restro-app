@@ -1,0 +1,64 @@
+.VerCard {
+  overflow: hidden;
+  box-shadow: 0 2px 20px #e1e5ee;
+  border-radius: 0.7rem;
+  border: 1px solid rgb(161, 161, 161);
+  display: flex;
+  margin-bottom: 20px;
+  width: 80%;
+  box-shadow: 5px 5px 3px rgb(231, 228, 228);
+  cursor: pointer;
+}
+
+.VerCardImgContainer {
+  width: 250px;
+}
+
+.VerCard_Img {
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.VerCard_title {
+  padding-top: 10px;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.VerCardReviews {
+  padding-left: 10px;
+  font-style: oblique;
+}
+
+.VerCard_Content {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.VerCard_Description {
+  padding-top: 5px;
+}
+
+.VerCard_Timebtn {
+  padding: 10px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 15px 10px 10px 0px;
+  border: 2px solid #d50000;
+  background: transparent;
+  color: #d50000;
+  border-radius: 0.2rem;
+  transition: background 200ms ease-in, color 200ms ease-in;
+}
+
+.VerCard_Timebtn:hover {
+  background: var(--btn-theme-color);
+  color: white;
+}

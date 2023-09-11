@@ -1,0 +1,236 @@
+.restaurant_profile {
+  margin-top: 70px;
+  height: 500px;
+  width: 70%;
+}
+
+.restaurant_details_container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  justify-content: space-around;
+  margin: 1rem;
+}
+
+.RestTabsSection {
+  width: 55%;
+}
+
+.MakeReservationSection {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.restaurant_detail {
+  display: flex;
+  align-content: space-between;
+  justify-content: space-evenly;
+}
+
+.ImgSlider {
+  line-height: 160px;
+}
+
+.ImgDiv {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.contentStyle {
+  height: 320px;
+  color: #fff;
+  text-align: "center";
+  line-height: 160px;
+  background: "#364d79";
+}
+
+.RestOverviewHeading {
+  text-align: left;
+}
+
+.OverviewSubSec {
+  text-align: left;
+}
+
+.RestOverviewRate {
+  font-size: medium;
+}
+
+.RestOverviewDesc {
+  padding: 8px 0px 0px 0px;
+}
+
+.ReviewTabContainer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  justify-content: space-between;
+}
+
+.ReviewTabContainerLeft {
+  width: 65%;
+  text-align: left;
+}
+
+.ReviewTabContainerRight {
+  width: 30%;
+}
+
+.UserReviewContainer {
+  display: flex;
+  border: none;
+  width: 80%;
+}
+
+.UserReviewImgContainer {
+  text-align: center;
+  padding: 15px;
+}
+
+.UserReviewImg {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.UserReviewSec {
+  padding-left: 20px;
+  padding-top: 15px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  /* font-family: cursive; */
+  font-weight: 500;
+  text-align: left;
+}
+
+.UserReviewDesc {
+  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.AdditionalInfoContainer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.AdditionalInfoContainerLeft {
+  width: 5%;
+}
+
+.AdditionalInfoContainerRight {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.AdditionalInfoIcons {
+  font-size: 25px;
+}
+
+@media (max-width: 932px) {
+  .ImgDiv {
+    height: 250px;
+  }
+
+  .AdditionalInfoContainerRight {
+    width: 40%;
+  }
+
+  .AdditionalInfoIcons {
+    font-size: 20px;
+  }
+
+  .AdditionalInfoText {
+    font-size: 12px;
+  }
+
+  .AdditionalInfoContainerRight b {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant_details_container {
+    flex-direction: column;
+    padding-top: 30px;
+    justify-content: space-around;
+    margin: 1rem;
+  }
+
+  .RestTabsSection {
+    width: 100%;
+  }
+
+  .MakeReservationSection {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 22px;
+  }
+
+  .AdditionalInfoContainer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .AdditionalInfoContainerLeft {
+    width: 4%;
+  }
+
+  .AdditionalInfoContainerRight {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .AdditionalInfoIcons {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .MakeReservationSection {
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .AdditionalInfoContainer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 24px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .AdditionalInfoContainerLeft {
+    width: 4%;
+  }
+
+  .AdditionalInfoContainerRight {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .AdditionalInfoIcons {
+    font-size: 20px;
+  }
+}
+
+.user-review-action {
+  margin-top: 10px;
+}

@@ -1,0 +1,203 @@
+:root {
+  --btn-theme-color: #e62c4f;
+}
+
+.header {
+  background-image: linear-gradient(
+    to right,
+    rgba(20, 30, 48, 0.6),
+    rgba(36, 59, 85, 0.9)
+  );
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.rightpart {
+  display: flex;
+  align-items: center;
+}
+
+.modal {
+  display: flex;
+  padding: 30px;
+  align-content: center;
+  justify-content: center;
+}
+
+.modalfileds {
+  padding-right: 10px;
+}
+
+.ModalDialog {
+  border: 3px solid var(--btn-theme-color);
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.BtnSigninReg {
+  border-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  width: 100px;
+}
+
+.SearchIconBtn {
+  margin: 3px;
+}
+
+.datepickerstyle {
+  border-radius: 10px;
+}
+
+.ddstyle {
+  border-radius: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.navlist {
+  list-style-type: none;
+}
+
+.navlist .listItem {
+  display: inline-block;
+  padding: 0px 0px 0px 5px;
+}
+
+.menuline {
+  width: 30px;
+  height: 2px;
+  background-color: beige;
+  margin-bottom: 6px;
+}
+
+.menu {
+  display: none;
+}
+
+.loggedHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.loginMsg {
+  color: chartreuse;
+}
+
+.logoutText {
+  margin-left: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .menu {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    position: relative;
+    background-image: linear-gradient(
+      to right,
+      rgba(20, 30, 48, 0.6),
+      rgba(36, 59, 85, 0.9)
+    );
+    padding-bottom: 8px;
+  }
+
+  .Logo {
+    width: 80px;
+  }
+
+  .navlist {
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    display: none;
+  }
+
+  .activeNavlist {
+    display: block;
+  }
+
+  .navlist .listItem {
+    display: block;
+  }
+
+  .BtnSigninReg {
+    background: none;
+    color: #ffffff;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    justify-content: space-around;
+  }
+  .BtnSigninReg {
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0.02em;
+    width: 80px;
+  }
+
+  .SearchIconBtn {
+    height: 30px;
+  }
+
+  .ModalDialog {
+    border-radius: 9px;
+  }
+
+  .modal {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .modalfileds {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .BtnSigninReg {
+    font-weight: 300;
+    text-transform: capitalize;
+    letter-spacing: 0.01em;
+    width: 75px;
+  }
+
+  .SearchIconBtn {
+    height: 30px;
+  }
+
+  .ModalDialog {
+    border-radius: 8px;
+  }
+
+  .modal {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .modalfileds {
+    padding: 4px;
+  }
+}

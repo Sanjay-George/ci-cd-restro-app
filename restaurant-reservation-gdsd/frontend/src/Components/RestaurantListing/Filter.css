@@ -1,0 +1,296 @@
+.sider {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  justify-content: left;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.filteroption {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.filter {
+  margin: 0px 0px 20px 0px;
+}
+
+.pricerange {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.FilterAndSearchResultsContainer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  margin: 2rem;
+}
+
+.FilterSection {
+  width: 20%;
+}
+
+.SearchResultsSection {
+  width: 80%;
+}
+
+.SearchResultsSection h2,
+p {
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.VerCard {
+  overflow: hidden;
+  box-shadow: 0 2px 20px #e1e5ee;
+  border-radius: 0.7rem;
+  border: 1px solid rgb(161, 161, 161);
+  display: flex;
+  margin-bottom: 20px;
+  width: 80%;
+  box-shadow: 5px 5px 3px rgb(231, 228, 228);
+}
+
+.VerCardImgContainer {
+  width: 250px;
+}
+
+.VerCard_Img {
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.VerCard_title {
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+.VerCardReviews {
+  padding-left: 10px;
+  font-style: oblique;
+}
+
+.VerCard_Content {
+  padding-left: 20px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.VerCard_Description {
+  padding-top: 5px;
+}
+
+.VerCard_Timebtn {
+  padding: 10px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 15px 10px 10px 0px;
+  border: 2px solid #d50000;
+  background: transparent;
+  color: #d50000;
+  border-radius: 0.2rem;
+  transition: background 200ms ease-in, color 200ms ease-in;
+}
+
+.VerCard_Timebtn:hover {
+  background: var(--btn-theme-color);
+  color: white;
+}
+
+.pricerange {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px)
+{
+  .VerCard {
+    margin-bottom: 15px;
+    height: 34%;
+    width: 100%;
+  }
+  
+  .VerCardImgContainer {
+    width: 200px;
+  }
+  
+  .VerCard_Img {
+    height: 10rem;
+  }
+  
+  .VerCard_title {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  
+  .VerCard_Content {
+    letter-spacing: 1px;
+    font-size: 13px;
+  }
+  
+  .VerCard_Description {
+    padding-top: 4px;
+  }
+
+  .FilterAndSearchResultsContainer {
+    padding-top: 15px;
+    margin: 1rem;
+  }
+  
+  .FilterSection {
+    width: 28%;
+  }
+  
+  .SearchResultsSection {
+    width: 72%;
+  }
+  
+  .SearchResultsSection h2,
+  p {
+    text-align: left;
+    padding-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .filter {
+    margin: 0px 0px 15px 0px;
+  }
+  
+  .RateIcons{
+    font-size: small;
+  }
+}
+
+@media (max-width: 576px)
+{
+  .VerCard {
+    margin-bottom: 12px;
+    height: 28%;
+    width: 100%;
+  }
+  
+  .VerCardImgContainer {
+    width: 140px;
+  }
+  
+  .VerCard_Img {
+    height: 9rem;
+  }
+  
+  .VerCard_title {
+    padding-top: 5px;
+    padding-bottom: 4px;
+  }
+  
+  .VerCard_Content {
+    letter-spacing: 0px;
+    font-size: 12px;
+  }
+  
+  .VerCard_Description {
+    padding-top: 3px;
+  }
+
+  .FilterAndSearchResultsContainer {
+    padding-top: 15px;
+    margin: 1rem;
+  }
+  
+  .FilterSection {
+    width: 28%;
+  }
+  
+  .SearchResultsSection {
+    width: 72%;
+  }
+  
+  .SearchResultsSection h2,
+  p {
+    text-align: left;
+    padding-bottom: 8px;
+    font-weight: 400;
+  }
+  
+  .filter {
+    margin: 0px 0px 15px 0px;
+  }
+  
+  .RateIcons{
+    font-size: small;
+  }
+}
+
+@media (max-width: 530px)
+{
+
+  .sider {
+    flex-direction: row;
+    font-size: 12px;
+  }
+
+  .VerCard {
+    margin-bottom: 11px;
+    height: 26%;
+    width: 100%;
+  }
+  
+  .VerCardImgContainer {
+    width: 150px;
+  }
+  
+  .VerCard_Img {
+    height: 8rem;
+  }
+  
+  .VerCard_title {
+    padding-top: 6px;
+    padding-bottom: 4px;
+  }
+  
+  .VerCard_Content {
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  
+  .VerCard_Description {
+    padding-top: 3px;
+  }
+
+  .FilterAndSearchResultsContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    margin: 1rem;
+  }
+  
+  .FilterSection {
+    width: 100%;
+  }
+  
+  .SearchResultsSection {
+    width: 100%;
+  }
+  
+  .SearchResultsSection h2,
+  p {
+    text-align: left;
+    padding-bottom: 8px;
+    font-weight: 400;
+  }
+  
+  .filter {
+    margin: 0px 0px 15px 0px;
+  }
+  
+  .RateIcons{
+    font-size: small;
+  }
+}
