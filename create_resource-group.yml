@@ -1,0 +1,17 @@
+---
+- name: Create Azure Resource group
+  hosts: localhost
+  connection: local
+
+  vars: 
+    resource_group: "restro-dev"
+    location: "eastus"
+
+  tasks:
+    - name: Create Azure Resource group
+      azure_rm_resourcegroup:
+        name: "{{ resource_group }}"
+        location: "{{ location }}"
+        tags:
+          env: "dev"
+          app: "restro"

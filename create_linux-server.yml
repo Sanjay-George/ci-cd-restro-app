@@ -1,0 +1,95 @@
+# Run playbook: ansible-playbook create_linux-server.yml --ask-vault-pass
+---
+- name: Create Azure VM
+  hosts: localhost
+  connection: local
+
+  vars:
+    env: dev
+    resource_group: "restro-dev"
+    location: "eastus"
+    password: !vault |
+      $ANSIBLE_VAULT;1.1;AES256
+      38353238363336633132633933336530643965646665626238613934613864356361636161333162
+      3462663932386636393433396462313235626366343066350a343131343461383030383162653364
+      34343766316266306665616431666435326665626561366332356631363732636362633031396538
+      3635353238396462300a336163656435626436333433373338363833643435333832616635306262
+      6432
+
+  tasks:
+    - name: "Create virtual network"
+      azure_rm_virtualnetwork:
+        resource_group: "{{ resource_group }}"
+        name: "vnet-{{ env }}"
+        address_prefixes: "10.0.0.0/16"
+
+    - name: "Add subnet"
+      azure_rm_subnet:
+        resource_group: "{{ resource_group }}"
+        name: "snet-{{ env }}"
+        address_prefix: "10.0.1.0/24"
+        virtual_network: "vnet-{{ env }}"
+
+    - name: "Create public IP address"
+      azure_rm_publicipaddress:
+        resource_group: "{{ resource_group }}"
+        allocation_method: Static
+        domain_name: "vm-linuxweb-{{ env }}"
+        name: "pip-linux-{{ env }}"
+      register: output_ip_address
+
+    - name: Output public IP
+      debug:
+        msg: "The public IP is {{ output_ip_address.state.ip_address }}"
+
+    - name: "Create Network Security Group"
+      azure_rm_securitygroup:
+        resource_group: "{{ resource_group }}"
+        name: nsg-linux
+        rules:
+          - name: SSH
+            protocol: Tcp
+            destination_port_range: 22
+            access: Allow
+            priority: 1001
+            direction: Inbound
+          - name: "allow_web_traffic"
+            protocol: Tcp
+            destination_port_range:
+              - 80
+              - 443
+            access: Allow
+            priority: 1002
+            direction: Inbound
+
+    - name: "Create virtual network interface card"
+      azure_rm_networkinterface:
+        resource_group: "{{ resource_group }}"
+        name: "nic-linux-{{ env }}"
+        virtual_network: "vnet-{{ env }}"
+        subnet: "snet-{{ env }}"
+        security_group: nsg-linux
+        ip_configurations:
+          - name: linux-ipconfig
+            public_ip_name: "pip-linux-{{ env }}"
+            primary: True
+
+    - name: "Create VM"
+      azure_rm_virtualmachine:
+        resource_group: "{{ resource_group }}"
+        name: "vm-linuxweb-{{ env }}"
+        vm_size: Standard_B1s
+        admin_username: restro-admin
+        admin_password: "{{ password }}"
+        ssh_password_enabled: true
+        network_interfaces: "nic-linux-{{ env }}"
+        tags:
+          env: "{{ env }}"
+          app: "restro"
+          type: "web-server"
+        image:
+          offer: CentOS
+          publisher: OpenLogic
+          sku: "8.0"
+          version: latest
+
