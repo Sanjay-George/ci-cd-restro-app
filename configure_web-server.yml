@@ -1,0 +1,24 @@
+# Run playbook with:
+# ansible-playbook -i hosts_azure_rm.yml configure_web-server.yml --ask-vault-pass
+---
+- name: Configure Linux Server with NGINX, Node and other packages
+  hosts: web
+
+  tasks:
+    - name: Install NGINX
+      package:
+        name: nginx
+        state: latest
+      become: yes
+
+    - name: Start NGINX
+      service:
+        name: nginx
+        state: started
+      become: yes
+
+    - name: Install Node.js
+      package:
+        name: nodejs
+        state: latest
+      become: yes
