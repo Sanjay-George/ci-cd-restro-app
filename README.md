@@ -1,4 +1,4 @@
-# ci-cd-restro-app 🍔
+# ci-cd-restro-app 
 
 Learning CI/CD practices by implementing them on a restaurant booking app. 
 
@@ -31,3 +31,8 @@ Learning CI/CD practices by implementing them on a restaurant booking app.
     - NGINX
     - NodeJS
 - [Azure DB for MySQL](https://azure.microsoft.com/en-in/products/mysql)
+
+# References
+- Azure 
+    - https://learn.microsoft.com/en-us/azure/developer/ansible/install-on-linux-vm?tabs=azure-cli#create-azure-credentials
+    - https://learn.microsoft.com/en-us/azure/developer/ansible/vm-configure?tabs=ansible
