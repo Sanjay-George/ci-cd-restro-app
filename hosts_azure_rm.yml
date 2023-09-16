@@ -1,0 +1,12 @@
+plugin: azure_rm
+include_vm_resource_groups:
+  - restro-dev
+auth_source: auto
+plain_host_names: yes
+
+conditional_groups:
+  web: tags.type == "web-server"
+
+
+# To see the dynamic inventories, run the following command:
+# ansible-inventory -i hosts_azure_rm.yml --graph
