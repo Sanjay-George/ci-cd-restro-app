@@ -4,7 +4,15 @@
 - name: Configure Linux Server with NGINX, Node and other packages
   hosts: web
 
+  vars:
+    NODEJS_VERSION: "16"
+
   tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+      become: yes
+
     - name: Install NGINX
       package:
         name: nginx
@@ -17,8 +25,52 @@
         state: started
       become: yes
 
-    - name: Install Node.js
-      package:
-        name: nodejs
-        state: latest
+    - name: Install Node.js dependencies
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - curl
+        - software-properties-common
       become: yes
+    
+    - name: Install the gpg key for nodejs LTS
+      apt_key:
+        url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+        state: present
+      become: yes
+
+    - name: Install the nodejs LTS repos
+      apt_repository:
+        repo: "deb https://deb.nodesource.com/node_{{ NODEJS_VERSION }}.x {{ ansible_distribution_release }} main"
+        state: present
+        update_cache: yes
+      become: yes
+
+    - name: Install nodejs
+      apt:
+        name: nodejs
+        state: present
+      become: yes
+    
+    - name: Check nodejs version
+      command: "node -v"
+      register: nodejs_version
+
+    - name: Print nodejs version
+      debug:
+        msg: "Nodejs version: {{ nodejs_version.stdout }}"
+
+    - name: Install PM2 to manage node
+      npm:
+        name: pm2
+        global: yes
+      become: yes
+    
+    - name: Check PM2 status
+      command: "pm2 ping"
+      register: pm2_ping
+
+    - name: PM2 ping
+      debug:
+        msg: "{{ pm2_ping.stdout }}"

@@ -1,4 +1,4 @@
-# Run playbook: ansible-playbook create_linux-server.yml --ask-vault-pass
+# Run playbook: ansible-playbook create_web-server.yml --ask-vault-pass
 ---
 - name: Create Azure VM
   hosts: localhost
@@ -88,7 +88,7 @@
           app: "restro"
           type: "web-server"
         image:
-          offer: CentOS
-          publisher: OpenLogic
-          sku: "8.0"
+          offer: UbuntuServer
+          publisher: Canonical
+          sku: "18.04-LTS"
           version: latest
