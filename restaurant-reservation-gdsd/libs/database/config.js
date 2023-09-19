@@ -1,21 +1,15 @@
 const mysql = require("mysql2");
-const { getConfigValue } = require("../utils/configReader");
 
 /* File Author: Sanjay George */
-
-const dbConfig = getConfigValue("dbConfig");
 require("dotenv").config();
 
 let pool;
-
-// Note: On local machine, configure your MYSQL password by setting environment variable `MYSQL_PASSWORD`
-
 const initializeConnectionPool = () => {
   pool = mysql.createPool({
-    host: dbConfig["host"],
-    user: dbConfig["user"],
+    host: process.env.MYSQL_HOST || "localhost",
+    user: process.env.MYSQL_USERNAME || "root",
     password: process.env.MYSQL_PASSWORD,
-    database: dbConfig["database"],
+    database: "reserveat",
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
