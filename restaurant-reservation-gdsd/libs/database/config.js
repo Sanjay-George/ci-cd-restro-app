@@ -9,6 +9,7 @@ const initializeConnectionPool = () => {
     host: process.env.MYSQL_HOST || "localhost",
     user: process.env.MYSQL_USERNAME || "root",
     password: process.env.MYSQL_PASSWORD,
+    port: process.env.MYSQL_PORT || 3306,
     database: "reserveat",
     waitForConnections: true,
     connectionLimit: 10,
