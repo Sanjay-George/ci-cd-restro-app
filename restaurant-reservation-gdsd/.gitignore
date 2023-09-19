@@ -9,3 +9,5 @@ npm-debug.log
 .nyc
 .DS_Store
 uploads/
+
+.env
