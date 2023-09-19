@@ -12,6 +12,10 @@ Learning CI/CD practices by implementing them on a restaurant booking app.
 - Terraform (if really required)
 - Microsoft Azure (for cloud resources)
 
+![image](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/ae85f3d2-11c5-4937-b741-85a9a1f92dc1)
+
+
+
 ### Web Application
 
 - React
