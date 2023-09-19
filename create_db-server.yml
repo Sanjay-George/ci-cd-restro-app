@@ -1,0 +1,33 @@
+---
+- name: Create (or update) MySQL Server
+  hosts: localhost
+
+  vars:
+    version: "5.7" # 8.0 is not supported in Ansible 2.9
+    env: dev
+    resource_group: "restro-dev"
+    location: "eastus"
+    admin_username: restro-admin
+    admin_password: !vault |
+      $ANSIBLE_VAULT;1.1;AES256
+      38353238363336633132633933336530643965646665626238613934613864356361636161333162
+      3462663932386636393433396462313235626366343066350a343131343461383030383162653364
+      34343766316266306665616431666435326665626561366332356631363732636362633031396538
+      3635353238396462300a336163656435626436333433373338363833643435333832616635306262
+      6432
+
+  tasks:
+  - name: "Create MySQL Server"
+    azure_rm_mysqlserver:
+      resource_group: "{{ resource_group }}"
+      name: restro-db-{{ env }}
+      sku:
+        name: B_Gen5_1  # {pricing tier}_{compute generation}_{vCores}  Read more: https://learn.microsoft.com/en-us/azure/mysql/single-server/concepts-pricing-tiers
+        tier: Basic
+      location: "{{ location }}"
+      storage_mb: 20480
+      enforce_ssl: True
+      version: "{{ version }}"
+      admin_username: "{{ admin_username }}"
+      admin_password: "{{ admin_password }}"
+
