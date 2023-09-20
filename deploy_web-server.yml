@@ -1,0 +1,81 @@
+# Run playbook: 
+# ansible-playbook -i hosts_azure_rm.yml deploy_web-server.yml --ask-vault-pass
+---
+- name: Deploy code to web Server
+  hosts: web
+
+  vars:
+    local_path: "."   # Override by passing --extra-vars "local_path=../"
+    remote_path: /home/ubuntu/reserveat 
+
+  tasks:
+  - name: Create base folder for application
+    file:
+      path: "{{ remote_path }}"
+      state: directory
+      mode: '0755'
+    become: yes
+
+  # - name: Copy backend files and folders
+  #   copy:
+  #     src: "{{ local_path }}/{{ item.src }}"
+  #     dest: "{{ remote_path }}/{{ item.src }}"
+  #     mode: '0755'
+  #   become: yes
+  #   loop:
+  #     - src: libs/
+  #     - src: package.json
+  #     - src: package-lock.json
+  #     - src: server.js
+  
+  # TODO: REMOVE LATER
+  # - name: Copy libs folder
+  #   copy:
+  #     src: "{{ local_path }}/libs/"
+  #     dest: "{{ remote_path }}/libs/"
+  #     mode: '0755'
+  #     directory_mode: '0755'
+  #   become: yes
+
+  - name: Install node modules  # TODO: move this to CI / CD
+    command: npm install  # npm ci
+    args:
+      chdir: "{{ remote_path }}"
+    become: yes
+  
+  - name: Start PM2
+    command: pm2 start server.js
+    ignore_errors: true
+    args:
+      chdir: "{{ remote_path }}"
+    become: yes
+
+  - name: Restart PM2
+    command: pm2 restart server
+    args:
+      chdir: "{{ remote_path }}"
+    become: yes
+  
+
+  # DEPLOY FRONTEND 
+  - name: Copy frontend build files
+    copy:
+      src: "{{local_path}}/frontend/build/"
+      dest: "{{ remote_path }}/frontend/"
+      mode: '0755'
+    become: yes
+
+  # - name: Get facts about MySQL server
+  # - name: Set environment vars for accessing MySQL (.env file)
+        
+  - name: Copy NGINX configuration
+    copy:
+      src: "{{local_path}}/deployment/nginx/gdsd1restaurant.live.conf"
+      dest: /etc/nginx/sites-available/reserveat.conf
+    become: yes
+
+  - name: Restart NGINX
+    service:
+      name: nginx
+      state: restarted
+    become: yes
