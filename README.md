@@ -2,22 +2,28 @@
 
 Learning CI/CD practices by implementing them on a restaurant booking app. 
 
+# CI / CD pipelines
+
+## Build pipeline
+![image](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/17ea951f-d1c2-495a-b26d-1c04b1ec5272)
+
+
+## Release pipeline
+![image](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/a446eb66-9958-4086-83b1-01b31c558540)
+
+
+
 # Tools and frameworks 🚜
-
 ### Automation and Cloud
-
 - Ansible
 - GitHub Actions
 - Docker
 - Terraform (if really required)
 - Microsoft Azure (for cloud resources)
-
+  
 ![image](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/ae85f3d2-11c5-4937-b741-85a9a1f92dc1)
 
-
-
 ### Web Application
-
 - React
 - NodeJS
 - MySQL
