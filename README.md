@@ -2,7 +2,7 @@
 
 Learning CI/CD practices by implementing them on a restaurant booking app. 
 
-# CI / CD pipelines
+# CI / CD pipelines ⚙️
 
 ## Build pipeline
 ![image](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/17ea951f-d1c2-495a-b26d-1c04b1ec5272)
