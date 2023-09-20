@@ -5,7 +5,8 @@ auth_source: auto
 plain_host_names: yes
 
 conditional_groups:
-  web: tags.type == "web-server"
+  web: tags.type == "web"
+  db: tags.type == "db"
 
 
 # To see the dynamic inventories, run the following command:

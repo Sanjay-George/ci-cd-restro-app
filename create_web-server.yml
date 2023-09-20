@@ -86,7 +86,7 @@
         tags:
           env: "{{ env }}"
           app: "restro"
-          type: "web-server"
+          type: "web"
         image:
           offer: UbuntuServer
           publisher: Canonical
