@@ -1,7 +1,7 @@
 name: Build and Test application code
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
   push:
     branches: [ "master" ]
     paths:
