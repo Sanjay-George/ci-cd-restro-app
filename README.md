@@ -2,6 +2,8 @@
 
 Learning CI/CD practices by implementing them on a restaurant booking app. 
 
+[![Build and Test App](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/build_app.yml/badge.svg)](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/build_app.yml)
+
 # CI / CD pipelines ⚙️
 
 ## Build pipeline
