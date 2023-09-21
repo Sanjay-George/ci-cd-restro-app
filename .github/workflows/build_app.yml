@@ -17,7 +17,7 @@ jobs:
         node-version: [18.x]
     
     env: 
-      WORKING_DIR: ./restaurant-reservation-gdsd
+      WORKING_DIR: restaurant-reservation-gdsd
 
     steps:
     - uses: actions/checkout@v3
@@ -51,7 +51,7 @@ jobs:
         node-version: [18.x]
     
     env: 
-      WORKING_DIR: ./restaurant-reservation-gdsd/frontend/
+      WORKING_DIR: restaurant-reservation-gdsd/frontend/
       
     steps:
     - uses: actions/checkout@v3
