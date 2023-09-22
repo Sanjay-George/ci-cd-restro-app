@@ -5,9 +5,9 @@ on:
   push:
     branches: [ "master" ]
     paths:
-      - '!/**/frontend/**/*'
       - '**/*.js'
       - '**/package.json'
+      - '!/**/frontend/**/*'
 
 jobs:
   build:
