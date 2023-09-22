@@ -142,7 +142,7 @@ export default function ChatWrapper({ showModal, setShowModal, chatDetails }) {
               )}
 
               <MessageInput
-                placeholder="Type message here..."
+                placeholder="Type message here"
                 value={message}
                 onChange={(val) => setMessage(val)}
                 onSend={handleSendMessageClick}
