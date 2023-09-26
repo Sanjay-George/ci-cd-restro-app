@@ -4,19 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
-    
-    # env: 
-    #   WORKING_DIR: restaurant-reservation-gdsd/frontend/
+  build_backend:
+    uses: ./.github/workflows/build_backend.yml
+    with:
+      shoud_store_build: true
       
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Build backend
-      uses: ./.github/workflows/build_backend.yml
-      with:
-        shoud_store_build: true
