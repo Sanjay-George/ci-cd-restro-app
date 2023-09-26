@@ -1,5 +1,5 @@
 # Run playbook: 
-# ansible-playbook -i hosts_azure_rm.yml deploy_web-server.yml --ask-vault-pass --extra-vars "local_path=./restaurant-reservation-gdsd/"
+# ansible-playbook -i hosts_azure_rm.yml deploy_web-server.yml --ask-vault-pass --extra-vars "local_path=./restaurant-reservation-gdsd"
 ---
 - name: Deploy code to web Server
   hosts: web
