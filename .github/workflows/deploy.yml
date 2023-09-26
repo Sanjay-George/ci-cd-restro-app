@@ -8,4 +8,14 @@ jobs:
     uses: ./.github/workflows/build_backend.yml
     with:
       shoud_store_build: true
+  
+  # build_frontend:
+
+  deploy:
+    needs: build_backend
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
       
