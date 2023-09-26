@@ -51,7 +51,7 @@ jobs:
         npm test --if-present
     
     - name: Archive objects
-      if: ${{ github.event.inputs.shoud_store_build == 'true' }}
+      if: ${{ inputs.shoud_store_build == 'true' }}
       uses: actions/upload-artifact@v3
       with:
         name: build-files   # Add release tag to keep version of artifacts
