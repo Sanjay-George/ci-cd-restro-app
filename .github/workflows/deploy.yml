@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v4.1.0
+    
     - name: Download build files
       uses: actions/download-artifact@v3
       with:
@@ -29,6 +31,7 @@ jobs:
         vault_password: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
         options: |
           --inventory hosts_azure_rm.yml
+          --extra-vars "local_path=./ci-cd-restro-app"
 
 
       
