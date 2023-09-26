@@ -54,8 +54,8 @@ jobs:
       if: inputs.shoud_store_build == true
       uses: actions/upload-artifact@v3
       with:
-        name: build-files   # Add release tag to keep version of artifacts
-        retention-days: 1   # Modify this as required
+        name: build-files 
+        retention-days: 1
         path: |
           restaurant-reservation-gdsd/libs
           restaurant-reservation-gdsd/package*.json
