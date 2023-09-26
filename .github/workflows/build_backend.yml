@@ -57,6 +57,6 @@ jobs:
         name: build-files   # Add release tag to keep version of artifacts
         retention-days: 1   # Modify this as required
         path: |
-          $WORKING_DIR/libs/
+          '${$WORKING_DIR}/libs/'
           $WORKING_DIR/package*.json
           $WORKING_DIR/server.js
