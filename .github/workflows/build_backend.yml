@@ -54,7 +54,8 @@ jobs:
       if: ${{ github.event.inputs.should_archive_objects == 'true' }}
       uses: actions/upload-artifact@v3
       with:
-        name: backend-build
+        name: build-files
+        retention-days: 1
         path: |
           $WORKING_DIR/libs/
           $WORKING_DIR/package*.json
