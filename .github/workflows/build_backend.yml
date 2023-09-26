@@ -2,6 +2,12 @@ name: Build and Test Backend
 
 on:
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      should_archive_objects:
+        description: 'Should archive objects as GitHub artifact'
+        type: boolean
+        default: false
   push:
     branches: [ "master" ]
     paths:
@@ -43,3 +49,13 @@ jobs:
       run: |
         cd $WORKING_DIR
         npm test --if-present
+    
+    - name: Archive objects
+      if: ${{ github.event.inputs.should_archive_objects == 'true' }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: backend-build
+        path: |
+          $WORKING_DIR/libs/
+          $WORKING_DIR/package*.json
+          $WORKING_DIR/server.js
