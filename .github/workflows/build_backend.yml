@@ -57,6 +57,6 @@ jobs:
         name: build-files   # Add release tag to keep version of artifacts
         retention-days: 1   # Modify this as required
         path: |
-          restaurant-reservation-gdsd/libs/'
+          restaurant-reservation-gdsd/libs
           restaurant-reservation-gdsd/package*.json
           restaurant-reservation-gdsd/server.js
