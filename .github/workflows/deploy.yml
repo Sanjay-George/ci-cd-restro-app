@@ -16,6 +16,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Download build files
+      uses: actions/download-artifact@v3
+      with:
+        name: build-files # Downloads to current working directory
+
+
+    - name: Run ansible playbook to deploy code to server
+      uses: dawidd6/action-ansible-playbook@v2.6.1
+      with:
+        playbook: deploy_web-server.yml
+        vault_password: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
+        options: |
+          --inventory hosts_azure_rm.yml
+
 
       
