@@ -1,4 +1,4 @@
-name: Deploy code to server
+name: Deploy code
 
 on:
   workflow_dispatch:
@@ -15,7 +15,11 @@ jobs:
     needs: build_backend
     runs-on: ubuntu-latest
 
-    
+    env:
+      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      AZURE_SECRET: ${{ secrets.AZURE_SECRET }}
+      AZURE_TENANT: ${{ secrets.AZURE_TENANT }}
 
     steps:
     - uses: actions/checkout@v4.1.0
@@ -23,17 +27,7 @@ jobs:
     - name: Download build files
       uses: actions/download-artifact@v3
       with:
-        name: build-files # Downloads to current working directory
-
-    - name: Store azure credentials in file
-      env: 
-        AZURE_CREDENTIALS_FILE: ${{ secrets.AZURE_CREDENTIALS_FILE }}
-      run: |
-        mkdir ~/.azure
-        touch ~/.azure/credentials
-        echo $AZURE_CREDENTIALS_FILE > ~/.azure/credentials
-
-    - run: cat ~/.azure/credentials
+        name: build-files
 
     - name: Run ansible playbook to deploy code to server
       uses: dawidd6/action-ansible-playbook@v2.6.1
@@ -44,7 +38,4 @@ jobs:
           --inventory hosts_azure_rm.yml
           --extra-vars "local_path=./ci-cd-restro-app"
 
-    - name: Cleanup
-      run: |
-        rm -r ~/.azure
-      
+
