@@ -4,7 +4,7 @@
 - name: Deploy code to web Server
   hosts: web
 
-  ## TODO: STORE AND GET ARTIFICATS FROM GITHUB 
+  ## TODO: STORE AND GET ARTIFACTS FROM GITHUB 
   # https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs
 
   vars:

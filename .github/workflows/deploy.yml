@@ -32,9 +32,12 @@ jobs:
         name: frontend-build
         path: ./frontend/build
 
+    - name: Copy NGINX configuration to the expected path
+      run: cp ./restaurant-reservation-gdsd/deployment/nginx/gdsd1restaurant.live.conf ./deployment/nginx/
+       
     - name: Display structure of workspace
-      run: ls -R
-        
+      run: ls -R 
+
     - name: Run ansible playbook to deploy code to server
       uses: ./.github/actions/ansible
       env:
