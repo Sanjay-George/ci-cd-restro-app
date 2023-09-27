@@ -44,6 +44,7 @@ Learning CI/CD practices by implementing them on a restaurant booking app.
 - [Azure DB for MySQL](https://azure.microsoft.com/en-in/products/mysql)
 
 # References
+- [My Ansible basics repository](https://github.com/Sanjay-George/learn-ansible)
 - Azure 
     - https://learn.microsoft.com/en-us/azure/developer/ansible/install-on-linux-vm?tabs=azure-cli#create-azure-credentials
     - https://learn.microsoft.com/en-us/azure/developer/ansible/vm-configure?tabs=ansible
@@ -52,4 +53,3 @@ Learning CI/CD practices by implementing them on a restaurant booking app.
     - https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action#testing-out-your-action-in-a-workflow
 - Ansible
     - https://docs.ansible.com/ansible/latest/collections/azure/azcollection/azure_rm_resource_module.html
-    - https://github.com/Sanjay-George/learn-ansible
