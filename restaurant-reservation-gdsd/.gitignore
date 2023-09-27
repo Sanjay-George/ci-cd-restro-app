@@ -1,13 +1,7 @@
-## Frontend
-/frontend/node_modules
-/frontend/build
-
-## Node
 node_modules
 build
 npm-debug.log
 .nyc
 .DS_Store
 uploads/
-
 .env
