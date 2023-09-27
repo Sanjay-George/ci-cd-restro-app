@@ -10,10 +10,23 @@ Learning CI/CD practices by implementing them on a restaurant booking app.
 ## Build pipeline      
 ![build-pipeline drawio(5)](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/cef9be48-8747-428e-8a05-165f5fe4c3ea)
 
+### GitHub Workflows
+| File | Descripion |
+| --- | --- |
+| build_backend.yml | To build and test backend code (node.js). Triggers on push to master with file patterns: `**/*.js`, `**/package.json'`, `'!**/frontend/**'` (excludes frontend folder) |
+| build_frontend.yml | To build and test frontend code (react). Triggers on push to master with file patterns: `**/frontend/**/*.js`, `**/frontend/**/package.json` |
+
+<br/>
 
 ## Release pipeline
 ![build-pipeline drawio(6)](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/aeb57308-ff67-402c-bcdd-387f91f41fff)
 
+### GitHub Workflows
+| File | Descripion |
+| --- | --- |
+| deploy.yml | To deploy code. Calls `build_backend` and `build_frontend` jobs, before starting the job to deploy code. Built files are stored as GitHub Artifacts |
+
+<br/>
 
 # Tools and frameworks 🚜
 ### Automation and Cloud
