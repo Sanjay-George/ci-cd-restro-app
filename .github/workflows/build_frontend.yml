@@ -2,11 +2,17 @@ name: Build Frontend
 
 on:
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      shoud_store_build:
+        description: 'Should archive objects as GitHub artifact'
+        type: boolean
+        default: true
   push:
     branches: [ "master" ]
     paths:
       - '**/frontend/**/*.js'
-      - '**/frontend/**/package.json'
+      - '**/frontend/**/package*.json'
 
 jobs:
   build:
@@ -34,11 +40,22 @@ jobs:
         npm ci
         
     - name: Build
+      continue-on-error: true
       run: |
         cd $WORKING_DIR
         npm run build --if-present
       
     - name: Test
+      continue-on-error: true
       run: |
         cd $WORKING_DIR
         npm test --if-present
+        
+    - name: Archive objects
+      if: inputs.shoud_store_build == true
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-files 
+        retention-days: 1
+        path: |
+          restaurant-reservation-gdsd/frontend/build

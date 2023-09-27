@@ -1,18 +1,32 @@
 # ci-cd-restro-app 
 Learning CI/CD practices by implementing them on a restaurant booking app. 
 
+[![Deploy code](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/deploy.yml/badge.svg)](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/deploy.yml)
 [![Build Backend](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/build_backend.yml/badge.svg)](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/build_backend.yml)
 [![Build Frontend](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/build_frontend.yml/badge.svg)](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/build_frontend.yml)
 
 # CI / CD pipelines ⚙️
 
 ## Build pipeline      
-![image](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/17ea951f-d1c2-495a-b26d-1c04b1ec5272)
+![build-pipeline drawio(5)](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/cef9be48-8747-428e-8a05-165f5fe4c3ea)
 
+### GitHub Workflows
+| File | Descripion |
+| --- | --- |
+| build_backend.yml | To build and test backend code (node.js). Triggers on push to master with file patterns: `**/*.js`, `**/package.json'`, `'!**/frontend/**'` (excludes frontend folder) |
+| build_frontend.yml | To build and test frontend code (react). Triggers on push to master with file patterns: `**/frontend/**/*.js`, `**/frontend/**/package.json` |
+
+<br/>
 
 ## Release pipeline
-![image](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/a446eb66-9958-4086-83b1-01b31c558540)
+![build-pipeline drawio(6)](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/aeb57308-ff67-402c-bcdd-387f91f41fff)
 
+### GitHub Workflows
+| File | Descripion |
+| --- | --- |
+| deploy.yml | To deploy code. Calls `build_backend` and `build_frontend` jobs, before starting the job to deploy code. Built files are stored as GitHub Artifacts |
+
+<br/>
 
 # Tools and frameworks 🚜
 ### Automation and Cloud
@@ -43,6 +57,12 @@ Learning CI/CD practices by implementing them on a restaurant booking app.
 - [Azure DB for MySQL](https://azure.microsoft.com/en-in/products/mysql)
 
 # References
+- [My Ansible basics repository](https://github.com/Sanjay-George/learn-ansible)
 - Azure 
     - https://learn.microsoft.com/en-us/azure/developer/ansible/install-on-linux-vm?tabs=azure-cli#create-azure-credentials
     - https://learn.microsoft.com/en-us/azure/developer/ansible/vm-configure?tabs=ansible
+- Github Actions
+    - https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions
+    - https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action#testing-out-your-action-in-a-workflow
+- Ansible
+    - https://docs.ansible.com/ansible/latest/collections/azure/azcollection/azure_rm_resource_module.html
