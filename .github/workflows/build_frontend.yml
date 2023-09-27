@@ -2,13 +2,6 @@ name: Build Frontend
 
 on:
   workflow_dispatch:
-    inputs:
-      shoud_store_build:
-        description: 'Should archive objects as GitHub artifact'
-        type: boolean
-        default: true
-
-        
   workflow_call:
     inputs:
       shoud_store_build:

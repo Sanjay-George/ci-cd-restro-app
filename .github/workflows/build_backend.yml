@@ -12,8 +12,9 @@ on:
     branches: [ "master" ]
     paths:
       - '**/*.js'
-      - '**/package.json'
+      - '**/package*.json'
       - '!**/frontend/**'
+      - '!**/admin-panel/**'
 
 jobs:
   build:
