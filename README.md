@@ -1,6 +1,7 @@
 # ci-cd-restro-app 
 Learning CI/CD practices by implementing them on a restaurant booking app. 
 
+[![Deploy code](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/deploy.yml/badge.svg)](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/deploy.yml)
 [![Build Backend](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/build_backend.yml/badge.svg)](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/build_backend.yml)
 [![Build Frontend](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/build_frontend.yml/badge.svg)](https://github.com/Sanjay-George/ci-cd-restro-app/actions/workflows/build_frontend.yml)
 
