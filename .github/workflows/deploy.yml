@@ -33,7 +33,9 @@ jobs:
         path: ./frontend/build
 
     - name: Copy NGINX configuration to the expected path
-      run: cat ./restaurant-reservation-gdsd/deployment/nginx/gdsd1restaurant.live.conf >> ./deployment/nginx/gdsd1restaurant.live.conf
+      run: |
+        mkdir -p ./deployment/nginx
+        cp ./restaurant-reservation-gdsd/deployment/nginx/gdsd1restaurant.live.conf ./deployment/nginx/
        
     - name: Display structure of workspace
       run: ls -R 
