@@ -24,15 +24,6 @@ jobs:
       with:
         name: build-files
 
-    # - name: Run ansible playbook to deploy code to server
-    #   uses: dawidd6/action-ansible-playbook@v2.6.1
-    #   with:
-    #     playbook: deploy_web-server.yml
-    #     vault_password: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
-    #     options: |
-    #       --inventory hosts_azure_rm.yml
-    #       --extra-vars "local_path=./ci-cd-restro-app"
-
     - name: Run ansible playbook to deploy code to server
       uses: ./.github/actions/ansible
       env:
