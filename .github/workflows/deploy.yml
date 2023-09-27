@@ -15,12 +15,7 @@ jobs:
     needs: build_backend
     runs-on: ubuntu-latest
 
-    env:
-      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-      AZURE_SECRET: ${{ secrets.AZURE_SECRET }}
-      AZURE_TENANT: ${{ secrets.AZURE_TENANT }}
-
+    
     steps:
     - uses: actions/checkout@v4.1.0
     
@@ -29,13 +24,25 @@ jobs:
       with:
         name: build-files
 
+    # - name: Run ansible playbook to deploy code to server
+    #   uses: dawidd6/action-ansible-playbook@v2.6.1
+    #   with:
+    #     playbook: deploy_web-server.yml
+    #     vault_password: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
+    #     options: |
+    #       --inventory hosts_azure_rm.yml
+    #       --extra-vars "local_path=./ci-cd-restro-app"
+
     - name: Run ansible playbook to deploy code to server
-      uses: dawidd6/action-ansible-playbook@v2.6.1
+      uses: ./.github/actions/ansible
+      env:
+        AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+        AZURE_SECRET: ${{ secrets.AZURE_SECRET }}
+        AZURE_TENANT: ${{ secrets.AZURE_TENANT }}  
       with:
         playbook: deploy_web-server.yml
-        vault_password: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
-        options: |
-          --inventory hosts_azure_rm.yml
-          --extra-vars "local_path=./ci-cd-restro-app"
+        inventory: hosts_azure_rm.yml
+        
 
 
