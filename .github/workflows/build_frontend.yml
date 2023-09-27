@@ -52,6 +52,7 @@ jobs:
         npm test --if-present
         
     - name: Archive objects
+      continue-on-error: true
       if: inputs.shoud_store_build == true
       uses: actions/upload-artifact@v3
       with:
