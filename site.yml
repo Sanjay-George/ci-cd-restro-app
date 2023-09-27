@@ -1,0 +1,9 @@
+# Run playbook: 
+# For web: ansible-playbook -i hosts_azure_rm.yml site.yml --l web --ask-vault-pass --extra-vars test=true
+# For db: ansible-playbook -i hosts_azure_rm.yml site.yml --l db --ask-vault-pass --extra-vars test=true
+
+- name: Configure Web Server
+  import_playbook: configure_web-server.yml
+
+- name: Deploy code to web Server
+  import_playbook: deploy_web-server.yml

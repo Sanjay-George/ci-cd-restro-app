@@ -1,13 +1,15 @@
 name: 'Ansible'
 description: 'Runs an Ansible playbook'
 inputs:
-  inventory:
-    description: 'Ansible inventory to use'
-    required: true
-
   playbook:
     description: 'Playbook to run'
     required: true
+  inventory:
+    description: 'Ansible inventory to use'
+    required: true
+  limit:
+    description: 'Limit to a specific host or group. Supports patterns specified here: https://docs.ansible.com/ansible/latest/inventory_guide/intro_patterns.html#common-patterns'
+    required: false  
 
 runs:
   using: 'docker'
@@ -15,3 +17,4 @@ runs:
   args:
     - ${{ inputs.playbook }}      # $1 - playbook
     - ${{ inputs.inventory }}     # $2 - inventory
+    - ${{ inputs.limit }}         # $3 - limit

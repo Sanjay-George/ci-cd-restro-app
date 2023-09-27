@@ -42,8 +42,9 @@ jobs:
         AZURE_SECRET: ${{ secrets.AZURE_SECRET }}
         AZURE_TENANT: ${{ secrets.AZURE_TENANT }}  
       with:
-        playbook: deploy_web-server.yml
+        playbook: site.yml
         inventory: hosts_azure_rm.yml
+        limit: web
         
 
 
