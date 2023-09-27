@@ -1,0 +1,17 @@
+name: 'Ansible'
+description: 'Runs an Ansible playbook'
+inputs:
+  inventory:
+    description: 'Ansible inventory to use'
+    required: true
+
+  playbook:
+    description: 'Playbook to run'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.playbook }}      # $1 - playbook
+    - ${{ inputs.inventory }}     # $2 - inventory
