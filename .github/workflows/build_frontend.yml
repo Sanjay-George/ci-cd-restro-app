@@ -63,7 +63,7 @@ jobs:
       if: inputs.shoud_store_build == true
       uses: actions/upload-artifact@v3
       with:
-        name: build-files 
+        name: frontend-build 
         retention-days: 1
         path: |
           restaurant-reservation-gdsd/frontend/build
