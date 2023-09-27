@@ -15,7 +15,7 @@ jobs:
       shoud_store_build: true
 
   deploy:
-    needs: build_backend
+    needs: [ build_backend, build_frontend ]
     runs-on: ubuntu-latest
     
     steps:
