@@ -36,6 +36,7 @@ jobs:
     - name: Run ansible playbook to deploy code to server
       uses: ./.github/actions/ansible
       env:
+        ANSIBLE_VAULT_PASSWORD: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
         AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
         AZURE_SECRET: ${{ secrets.AZURE_SECRET }}
