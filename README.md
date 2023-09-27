@@ -8,11 +8,11 @@ Learning CI/CD practices by implementing them on a restaurant booking app.
 # CI / CD pipelines ⚙️
 
 ## Build pipeline      
-![image](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/17ea951f-d1c2-495a-b26d-1c04b1ec5272)
+![build-pipeline drawio(3)](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/57dbe1f4-6da6-4447-b371-4f3743615171)
 
 
 ## Release pipeline
-![image](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/a446eb66-9958-4086-83b1-01b31c558540)
+![build-pipeline drawio(2)](https://github.com/Sanjay-George/ci-cd-restro-app/assets/10389062/e193a266-bda9-48b4-93a2-cec0cac1f54d)
 
 
 # Tools and frameworks 🚜
