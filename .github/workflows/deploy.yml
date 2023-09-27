@@ -19,11 +19,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4.1.0
     
-    - name: Download build files
+    - name: Download backend build
       uses: actions/download-artifact@v3
       with:
-        name: build-files
+        name: backend-build
 
+    - name: Download frontend build
+      uses: actions/download-artifact@v3
+      with:
+        name: frontend-build
+        path: ./frontend/build
+        
     - name: Run ansible playbook to deploy code to server
       uses: ./.github/actions/ansible
       env:
