@@ -34,7 +34,7 @@ jobs:
         with:
           scan-type: 'fs'
           scan-ref: 'restaurant-reservation-gdsd/'
-          format: 'table'
+          format: 'sarif'
           severity: 'HIGH'
           output: 'trivy-results.sarif'
 
