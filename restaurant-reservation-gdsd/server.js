@@ -6,21 +6,23 @@ const search = require("./libs/controllers/search");
 const restaurantsRouter = require("./libs/controllers/restaurants");
 const reviewsRouter = require("./libs/controllers/reviews");
 const imagesRouter = require("./libs/controllers/images");
-const users = require("./libs/controllers/users");
-const chats = require("./libs/controllers/chats");
-const chatDB = require("./libs/database/chat");
 
-const booking = require("./libs/controllers/booking");
-const { passOnRestaurantId } = require("./libs/utils/middlewares");
-const { IMAGE_PATH } = require("./libs/utils/imageStore");
-const {
-  handleSocketAuthorization,
-  getSocketId,
-  removeSocketMapping,
-} = require("./libs/utils/socket");
-const rewards = require("./libs/controllers/rewards");
 
-require("dotenv").config();
+// Bad practice: Injecting unsanitized user input directly into the DOM
+const userInput = document.getElementById("input").value;
+document.getElementById("output").innerHTML = userInput;
+
+// Bad practice: Lack of error handling
+function divide(a, b) {
+    return a / b;
+}
+
+// This will throw an uncaught exception if 'b' is 0
+const result = divide(10, 0);
+console.log(result);
+
+
+
 
 const PORT = process.env.PORT || 5000;
 
